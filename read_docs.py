@@ -1,7 +1,7 @@
 from docx import Document
 
 # Abre o documento .docx
-doc = Document("NT XX.2024 - Vistoria Pólo de Carnaval 'Nome'.docx")
+doc = Document("NT XX.2024 - Teste.docx")
 
 # Define as informações padrões da nota
 nome_polo = input("Digite o nome do Polo: Ex: Marco Zero\n")
@@ -102,7 +102,7 @@ table_search("Nome do técnico",nome_tecnico )
 table_search("Nome do Responsável pela vistoria",nome_tecnico )
 table_search("Cargo",cargo)
 
-for i in range(1,22):
+for i in range(1,23):
     if i in lista_numeros and i in visto_info:
         if i < 10:
             indice_vistoria = "0"+str(i)+" - Informações da vistoria."
@@ -120,6 +120,7 @@ for i in range(1,22):
         else:
             indice_vistoria = str(i)+" - Informações da vistoria."
             table_search(indice_vistoria ,"-------Remover-----")
-            
+
+            #' 2.    01 – Informações da vistoria.'
 # Salva as alterações no documento
 doc.save("seu_documento_modificado.docx")
