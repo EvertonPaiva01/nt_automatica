@@ -102,13 +102,24 @@ table_search("Nome do técnico",nome_tecnico )
 table_search("Nome do Responsável pela vistoria",nome_tecnico )
 table_search("Cargo",cargo)
 
-for i in lista_numeros:
-    if i in visto_info:
-        indice_vistoria = str(i)+" - Informações da vistoria."
-        print(indice_vistoria)
-        table_search(indice_vistoria , visto_info[i]+".")
+for i in range(1,22):
+    if i in lista_numeros and i in visto_info:
+        if i < 10:
+            indice_vistoria = "0"+str(i)+" - Informações da vistoria."
+            print(indice_vistoria)
+            table_search(indice_vistoria , visto_info[i]+".")
+        else:
+            indice_vistoria = str(i)+" - Informações da vistoria."
+            print(indice_vistoria)
+            table_search(indice_vistoria , visto_info[i]+".")
     else:
-        indice_vistoria = str(i)+" - Informações da vistoria."
-        table_search(indice_vistoria ,"-------Remover-----")
+        if i < 10:
+            indice_vistoria = "0"+str(i)+" - Informações da vistoria."
+            print(indice_vistoria)
+            table_search(indice_vistoria ,"-------Remover-----")
+        else:
+            indice_vistoria = str(i)+" - Informações da vistoria."
+            table_search(indice_vistoria ,"-------Remover-----")
+            
 # Salva as alterações no documento
 doc.save("seu_documento_modificado.docx")
