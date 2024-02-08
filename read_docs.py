@@ -29,9 +29,9 @@ visto_info = {
 
     8:"A instalação não possui DR",
 
-    9:"O DR instalado é de alta sensibilidade (30mA)?",
+    9:"O DR instalado não é de alta sensibilidade (30mA)",
 
-    10:"As partes metálicas que são componentes dos sistemas elétricos estão aterradas?",
+    10:"As partes metálicas que são componentes dos sistemas elétricos não estão aterradas",
 
     11:"As partes metálicas que são próximas as instalações elétricas estão aterradas?",
 
