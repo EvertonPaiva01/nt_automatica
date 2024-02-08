@@ -9,8 +9,10 @@ logradouro = input("Digite o Logradouro: Ex: Av. Alfredo Lisboa\n")
 bairro = input("Digite o Bairro: Ex: Recife\n")
 dia = input("Digite a dia da ocorrencia: Ex: 08\n")
 hora = input("Digite a hora: Ex: 10:00\n")
-nome_tecnico = input("Digite o nome do Técnico responsável: Ex: Diego Araújo\n")
-cargo = input("Digite o cargo do técnico responsável: Ex: Gerente de Iluminação Praças e Parques\n")
+nome_tecnico = input("Digite o nome do Técnico responsável: Ex: Thiago Silva\n")
+cargo = input("Digite o cargo do técnico responsável: Ex: Gerente Geral de Iluminação Pública\n")
+informacoes = input("Digite o número dos itens que apresentaram irregularidades: Ex: 1,2,3\n")
+lista_numeros = [int(num) for num in informacoes.split(',')]
 
 visto_info = {
     1:"A infraestrutura não possui ART.",
@@ -73,13 +75,25 @@ def table_search(search,replace):
                         print(paragraph.text)
                         paragraph.text = paragraph.text.replace(search, replace)
          
-
+def table_drop(search,replace):
+    for table in doc.tables:
+        # Itera sobre todas as linhas da tabela
+        for row in table.rows:
+            # Itera sobre todas as células da linha
+            for cell in row.cells:
+                # Itera sobre todos os parágrafos dentro da célula
+                for paragraph in cell.paragraphs:
+                    # Verifica se o trecho desejado está no texto do parágrafo
+                    if search in paragraph.text:
+                        # Substitui "Nome do técnico." pelo nome do trabalhador
+                        print(paragraph.text)
+                        paragraph.text = paragraph.text.replace(search, replace)
 
 table_search("Nome do Pólo",nome_polo)
 #table_search("‘Nome do Pólo’",nome_polo)
 #table_search("‘Logradouro’ bairro",logradouro )
 table_search("Logradouro",logradouro )
-table_search("‘Nome do bairro’",bairro)
+#table_search("‘Nome do bairro’",bairro)
 table_search("Bairro",bairro)
 table_search("XX de fevereiro",dia)
 table_search("XX/02/2024",dia +"/02/2024")
@@ -88,6 +102,13 @@ table_search("Nome do técnico",nome_tecnico )
 table_search("Nome do Responsável pela vistoria",nome_tecnico )
 table_search("Cargo",cargo)
 
-
+for i in lista_numeros:
+    if i in visto_info:
+        indice_vistoria = str(i)+" - Informações da vistoria."
+        print(indice_vistoria)
+        table_search(indice_vistoria , visto_info[i]+".")
+    else:
+        indice_vistoria = str(i)+" - Informações da vistoria."
+        table_search(indice_vistoria ,"-------Remover-----")
 # Salva as alterações no documento
 doc.save("seu_documento_modificado.docx")
