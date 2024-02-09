@@ -1,6 +1,7 @@
 from docx import Document
 import PySimpleGUI as sg
 from docx import Document
+from docx.shared import Pt
 
 sg.theme('GrayGrayGray')
 layout = [
@@ -18,6 +19,11 @@ layout = [
 
 doc = Document("NT XX.2024 - Vistoria Pólo de Carnaval 'Nome'.docx")
 window  = sg.Window("Gerador automático de Notas Técnicas",layout)
+
+style = doc.styles['Normal']
+font = style.font
+font.name = 'Calibri'
+font.size = Pt(12)
 
 def table_search(search,replace):
     for table in doc.tables:
@@ -49,7 +55,7 @@ while True:
 
         5:"Existem cargas conectadas diretamente a rede elétrica de IP",
 
-        6:"A instalação não Disjuntor Termomagnético",
+        6:"A instalação não possui Disjuntor Termomagnético",
 
         7:"A instalação não possui DPS",
 
@@ -61,7 +67,7 @@ while True:
 
         11:"As partes metálicas que são próximas as instalações elétricas não estão aterradas",
 
-        12:"O aterramento não está executado com vara Copperweld 5/8x2,40m, fincada no solo com conector do tipo GAR/GTDU ou solda exotérmica, utilizando cabo de cobre 0,6/1kV de cor verde com bitola mínima de 16mm²",
+        12:"O aterramento não está executado com vara Copperweld 5/8''x2,40m, fincada no solo com conector do tipo GAR/GTDU ou solda exotérmica, utilizando cabo de cobre 0,6/1kV de cor verde com bitola mínima de 16mm²",
 
         13:"O aterramento das massas não foi respeitado",
 
