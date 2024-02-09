@@ -1,7 +1,14 @@
 from docx import Document
+from docx.shared import Pt
 
 # Abre o documento .docx
 doc = Document("NT XX.2024 - Vistoria Pólo de Carnaval 'Nome'.docx")
+
+# Definir o estilo de parágrafo padrão
+style = doc.styles['Normal']
+font = style.font
+font.name = 'Calibri'
+font.size = Pt(12)
 
 # Define as informações padrões da nota
 nome_polo = input("Digite o nome do Polo: Ex: Marco Zero\n")
@@ -22,10 +29,10 @@ visto_info = {
     3:"O responsável técnico não estava presente durante a montagem",
 
     4:"O fornecimento da energia não foi realizado pela Neoenergia PE",
-
+    
     5:"Existem cargas conectadas diretamente a rede elétrica de IP",
 
-    6:"A instalação não Disjuntor Termomagnético",
+    6:"A instalação não possui Disjuntor Termomagnético",
 
     7:"A instalação não possui DPS",
 
@@ -37,7 +44,7 @@ visto_info = {
 
     11:"As partes metálicas que são próximas as instalações elétricas não estão aterradas",
 
-    12:"O aterramento não está executado com vara Copperweld 5/8x2,40m, fincada no solo com conector do tipo GAR/GTDU ou solda exotérmica, utilizando cabo de cobre 0,6/1kV de cor verde com bitola mínima de 16mm²",
+    12:'O aterramento não está executado com vara Copperweld 5/8"x2,40m, fincada no solo com conector do tipo GAR/GTDU ou solda exotérmica, utilizando cabo de cobre 0,6/1kV de cor verde com bitola mínima de 16mm²',
 
     13:"O aterramento das massas não foi respeitado",
 
@@ -90,8 +97,8 @@ def table_drop(search,replace):
                         paragraph.text = paragraph.text.replace(search, replace)
 
 table_search("Nome do Pólo",nome_polo)
-table_search("‘Nome do Pólo’",nome_polo)
-table_search("‘Logradouro’ bairro",logradouro )
+#table_search("Nome do Pólo",nome_polo)
+table_search("‘Logradouro’ bairro",logradouro + ", ")
 table_search("Logradouro",logradouro )
 table_search("‘Nome do bairro’",bairro)
 table_search("Bairro",bairro)
@@ -102,7 +109,7 @@ table_search("Nome do técnico",nome_tecnico )
 table_search("Nome do Responsável pela vistoria",nome_tecnico )
 table_search("Cargo",cargo)
 
-for i in range(1,22):
+for i in range(1,23):
     if i in lista_numeros and i in visto_info:
         if i < 10:
             indice_vistoria = "0"+str(i)+" - Informações da vistoria."
