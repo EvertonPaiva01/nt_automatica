@@ -97,10 +97,13 @@ while True:
         
         print(nome_polo, logradouro, bairro, dia, hora, nome_tecnico, cargo)
 
-        table_search("Nome do Pólo", values['nome_polo'])
+        table_search("Nome do Pólo",nome_polo)
+        table_search("‘Nome do Pólo’",nome_polo)
+        table_search("‘Logradouro’ bairro",logradouro )
         table_search("Logradouro",logradouro )
+        table_search("‘Nome do bairro’",bairro)
         table_search("Bairro",bairro)
-        table_search("XX de fevereiro",dia)
+        table_search("XX de fevereiro",dia + " de fevereiro")
         table_search("XX/02/2024",dia +"/02/2024")
         table_search("XX:XX",hora)
         table_search("Nome do técnico",nome_tecnico )
@@ -129,4 +132,4 @@ while True:
 
         window.close()
 
-    doc.save("seu_documento_modificado.docx")
+    doc.save("NT XX.2024 - Vistoria Pólo de Carnaval "+ nome_polo +".docx.docx")
