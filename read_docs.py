@@ -95,7 +95,7 @@ table_search("Nome do Pólo",nome_polo)
 table_search("Logradouro",logradouro )
 #table_search("‘Nome do bairro’",bairro)
 table_search("Bairro",bairro)
-table_search("XX de fevereiro",dia)
+table_search("XX de fevereiro",dia + " de fevereiro")
 table_search("XX/02/2024",dia +"/02/2024")
 table_search("XX:XX",hora)
 table_search("Nome do técnico",nome_tecnico )
@@ -121,6 +121,5 @@ for i in range(1,23):
             indice_vistoria = str(i)+" - Informações da vistoria."
             table_search(indice_vistoria ,"-------Remover-----")
 
-            #' 2.    01 – Informações da vistoria.'
 # Salva as alterações no documento
 doc.save("seu_documento_modificado.docx")
