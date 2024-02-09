@@ -15,49 +15,49 @@ informacoes = input("Digite o número dos itens que apresentaram irregularidades
 lista_numeros = [int(num) for num in informacoes.split(',')]
 
 visto_info = {
-    1:"A infraestrutura não possui ART.",
+    1:"A infraestrutura não possui ART",
 
-    2:"O projeto elétrico com os equipamentos a serem instalados não foram encaminhado para a EMLURB juntamente a ART do responsável técnico pelas instalações.",
+    2:"O projeto elétrico com os equipamentos a serem instalados não foram encaminhado para a EMLURB juntamente a ART do responsável técnico pelas instalações",
 
-    3:"O responsável técnico não estava presente durante a montagem.",
+    3:"O responsável técnico não estava presente durante a montagem",
 
-    4:"O fornecimento da energia não foi realizado pela Neoenergia PE.",
+    4:"O fornecimento da energia não foi realizado pela Neoenergia PE",
 
-    5:"Existem cargas conectadas diretamente a rede elétrica de IP.",
+    5:"Existem cargas conectadas diretamente a rede elétrica de IP",
 
-    6:"A instalação não Disjuntor Termomagnético.",
+    6:"A instalação não Disjuntor Termomagnético",
 
-    7:"A instalação não possui DPS.",
+    7:"A instalação não possui DPS",
 
-    8:"A instalação não possui DR.",
+    8:"A instalação não possui DR",
 
-    9:"O DR instalado não é de alta sensibilidade (30mA).",
+    9:"O DR instalado não é de alta sensibilidade (30mA)",
 
-    10:"As partes metálicas que são componentes dos sistemas elétricos não estão aterradas.",
+    10:"As partes metálicas que são componentes dos sistemas elétricos não estão aterradas",
 
-    11:"As partes metálicas que são próximas as instalações elétricas não estão aterradas.",
+    11:"As partes metálicas que são próximas as instalações elétricas não estão aterradas",
 
-    12:"O aterramento não está executado com vara Copperweld 5/8x2,40m, fincada no solo com conector do tipo GAR/GTDU ou solda exotérmica, utilizando cabo de cobre 0,6/1kV de cor verde com bitola mínima de 16mm².",
+    12:"O aterramento não está executado com vara Copperweld 5/8x2,40m, fincada no solo com conector do tipo GAR/GTDU ou solda exotérmica, utilizando cabo de cobre 0,6/1kV de cor verde com bitola mínima de 16mm²",
 
-    13:"O aterramento das massas não foi respeitado.",
+    13:"O aterramento das massas não foi respeitado",
 
-    14:"Existem cabeamentos elétricos expostos ao tempo, intempéries, passando pelo chão ou amarrados em estruturas metálicas.",
+    14:"Existem cabeamentos elétricos expostos ao tempo, intempéries, passando pelo chão ou amarrados em estruturas metálicas",
 
-    15:"Não foi utilizado um trilho passa cabo protegendo os cabeamentos.",
+    15:"Não foi utilizado um trilho passa cabo protegendo os cabeamentos",
 
-    16:"Existem projetores/refletores ou qualquer tipo de iluminação provisória, em postes metálicos(exclusivos para iluminação pública) ou árvores.",
+    16:"Existem projetores/refletores ou qualquer tipo de iluminação provisória, em postes metálicos(exclusivos para iluminação pública) ou árvores",
 
-    17:"Os equipamentos usados para a realização das instalações elétricas provisórias não são de boa qualidade.",
+    17:"Os equipamentos usados para a realização das instalações elétricas provisórias não são de boa qualidade",
 
-    18:"Existem elementos (bandeira, barracas, refletores, fiações, entre outros) nos postes e demais equipamentos componentes do sistema de iluminação pública.",
+    18:"Existem elementos (bandeira, barracas, refletores, fiações, entre outros) nos postes e demais equipamentos componentes do sistema de iluminação pública",
 
-    19:"As distâncias para a AT e MT não estão respeitadas(conforme ABNT e Neoenergia).",
+    19:"As distâncias para a AT e MT não estão respeitadas(conforme ABNT e Neoenergia)",
 
-    20:"As caixas de passagem subterrânea estão violadas.",
+    20:"As caixas de passagem subterrânea estão violadas",
 
-    21:"Os medidores da Neoenergia estão violados.",
+    21:"Os medidores da Neoenergia estão violados",
 
-    22:"Existem cordões luminosos ou gambiarras cruzando vias, grades ou elementos metálicos pertencentes às estruturas dos prédios, comércios, residências, etc."
+    22:"Existem cordões luminosos ou gambiarras cruzando vias, grades ou elementos metálicos pertencentes às estruturas dos prédios, comércios, residências, etc"
 }
 
 # Busca na Tabela
