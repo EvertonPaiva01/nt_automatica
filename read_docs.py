@@ -90,10 +90,10 @@ def table_drop(search,replace):
                         paragraph.text = paragraph.text.replace(search, replace)
 
 table_search("Nome do Pólo",nome_polo)
-#table_search("‘Nome do Pólo’",nome_polo)
-#table_search("‘Logradouro’ bairro",logradouro )
+table_search("‘Nome do Pólo’",nome_polo)
+table_search("‘Logradouro’ bairro",logradouro )
 table_search("Logradouro",logradouro )
-#table_search("‘Nome do bairro’",bairro)
+table_search("‘Nome do bairro’",bairro)
 table_search("Bairro",bairro)
 table_search("XX de fevereiro",dia)
 table_search("XX/02/2024",dia +"/02/2024")
@@ -122,4 +122,4 @@ for i in range(1,22):
             table_search(indice_vistoria ,"-------Remover-----")
             
 # Salva as alterações no documento
-doc.save("seu_documento_modificado.docx")
+doc.save("NT XX.2024 - Vistoria Pólo de Carnaval "+ nome_polo +".docx.docx")
